@@ -1,6 +1,6 @@
 # DarkMotion
 
-A dark, animated theme for [Stremio-Enhanced](https://github.com/REVENGE977) by REVENGE977.
+A dark, animated theme for [Stremio-Enhanced](https://github.com/REVENGE977/stremio-enhanced) by [REVENGE977](https://github.com/REVENGE977).
 
 ## Features
 
