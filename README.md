@@ -1,4 +1,4 @@
-# DarkMotion
+C# DarkMotion
 
 A dark, animated theme for [Stremio-Enhanced](https://github.com/REVENGE977/stremio-enhanced) by [REVENGE977](https://github.com/REVENGE977).
 
@@ -15,8 +15,8 @@ Install the latest release of the DarkMotion CSS file [HERE](https://github.com/
 
 ## Screenshots
 
-![Screenshot 1](1.png) <!-- Add a path to your screenshot -->
-![Screenshot 2](2.png) <!-- Add a path to your screenshot -->
+![Screenshot 1](screenshots/1.png) <!-- Add a path to your screenshot -->
+![Screenshot 2](screenshots/2.png) <!-- Add a path to your screenshot -->
 
 
 *Happy Streaming with DarkMotion!*
