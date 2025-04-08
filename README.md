@@ -15,8 +15,8 @@ Install the latest release of the DarkMotion CSS file [HERE](https://github.com/
 
 ## Screenshots
 
-![Screenshot 1](path_to_screenshot1.png) <!-- Add a path to your screenshot -->
-![Screenshot 2](path_to_screenshot2.png) <!-- Add a path to your screenshot -->
+![Screenshot 1](1.png) <!-- Add a path to your screenshot -->
+![Screenshot 2](2.png) <!-- Add a path to your screenshot -->
 
 
 *Happy Streaming with DarkMotion!*
