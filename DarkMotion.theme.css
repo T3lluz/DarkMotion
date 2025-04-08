@@ -1,0 +1,259 @@
+/**
+ * @name Apple Motion Minimal
+ * @description Minimalist Apple-inspired theme with subtle animations for Stremio
+ * @version 1.0.0
+ * @author T3lluz
+ */
+
+/* APPLE MOTION MINIMAL - ESSENTIAL ANIMATIONS ONLY */
+:root {
+  /* Animation settings - subtle motion */
+  --animation-duration-micro: 0.2s;
+  --animation-duration-fast: 0.3s;
+  --animation-duration-normal: 0.4s;
+  
+  /* Clean easing curves */
+  --animation-easing-standard: cubic-bezier(0.2, 0.0, 0.2, 1);
+  --animation-easing-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1);
+  
+  /* Modern color palette - Minimal Dark */
+  --primary-background-color: #000000; 
+  --secondary-background-color: #000000; 
+  --tertiary-background-color: #000000; 
+  
+  /* Accent colors */
+  --accent-color: #0a84ff; /* iOS blue */
+  --accent-color-hover: rgba(10, 132, 255, 0.8);
+  
+  /* Text colors - Minimal */
+  --text-primary-color: #ffffff;
+  --text-secondary-color: rgba(255, 255, 255, 0.7);
+}
+
+/* System font stack */
+* {
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif !important;
+  
+  /* Base transitions for essential properties only */
+  transition-property: transform, background-color, opacity !important;
+  transition-duration: var(--animation-duration-fast) !important;
+  transition-timing-function: var(--animation-easing-standard) !important;
+}
+
+/* Core background color */
+body, 
+.mainBackground {
+  background-color: var(--primary-background-color) !important;
+  color: var(--text-primary-color) !important;
+}
+
+/* ========== ANIMATION KEYFRAMES - MINIMAL ========== */
+/* Page transition animation */
+@keyframes themeTransition {
+    0% { 
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+    100% { 
+        opacity: 1; 
+        transform: scale(1.0);
+    }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  0% { opacity: 50%; }
+  100% { opacity: 100%; }
+}
+
+/* Row hover animation */
+@keyframes rowHover {
+  0% { transform: scale(1.0); }
+  100% { transform: scale(1.01); }
+}
+
+/* ========== ESSENTIAL ANIMATIONS - MINIMALIST ========== */
+/* Page transitions - Clean and simple */
+.router-transition-enter,
+.router-transition-exit,
+[data-route-container],
+[class*="route"],
+[class*="page"],
+[class*="content"],
+[class*="view"],
+.mainNavigation + div,
+.boardContent,
+.discoveryContent,
+.libraryContent,
+.detailsContent,
+.playerContent,
+.searchContent,
+.metaContent {
+  animation: themeTransition var(--animation-duration-fast) var(--animation-easing-standard) forwards !important;
+  will-change: opacity, transform !important;
+}
+
+/* Card/Tile hover effects - subtle scale animation */
+.poster-container,
+.posterContainer,
+.meta-item,
+.meta-item-container,
+.item-container,
+[class*="poster-container"],
+[class*="meta-item"],
+[class*="card"],
+[class*="tile"] {
+  transition-property: transform !important;
+  transition-duration: var(--animation-duration-micro) !important;
+  transition-timing-function: var(--animation-easing-standard) !important;
+}
+
+/* Set base transition for all elements - both hover and exit animations */
+.poster-container,
+.posterContainer,
+.meta-item,
+.meta-item-container,
+.item-container,
+[class*="poster-container"],
+[class*="meta-item"],
+[class*="card"],
+[class*="tile"] {
+  transition: transform 1s var(--animation-easing-decelerate) !important;
+  transform-origin: center center !important;
+  backface-visibility: hidden !important;
+  will-change: transform !important;
+  transform: translateZ(0) !important; /* Force hardware acceleration */
+  perspective: 1000px !important; /* Improves 3D rendering */
+}
+
+/* Scale effect on hover */
+.poster-container:hover,
+.posterContainer:hover,
+.meta-item:hover,
+.meta-item-container:hover,
+.item-container:hover,
+[class*="poster-container"]:hover,
+[class*="meta-item"]:hover,
+[class*="card"]:hover,
+[class*="tile"]:hover {
+  transform: translateZ(0) scale(1.02) !important; /* Combine transforms for better stability */
+  z-index: 1 !important;
+}
+
+
+/* Button styling - colors only */
+button, 
+.button {
+  background-color: var(--tertiary-background-color) !important;
+  color: var(--text-primary-color) !important;
+}
+
+button:hover, 
+.button:hover {
+  background-color: var(--quaternary-background-color) !important;
+}
+
+/* Accent buttons */
+button.accent, 
+.button.accent,
+.primaryButton {
+  background-color: var(--accent-color) !important;
+}
+
+button.accent:hover, 
+.button.accent:hover,
+.primaryButton:hover {
+  background-color: var(--accent-color-hover) !important;
+}
+
+/* Navigation elements */
+.navigationTab {
+  transition: background-color var(--animation-duration-fast) var(--animation-easing-standard) !important;
+}
+
+.navigationTab:hover {
+  background-color: var(--nav-hover-color) !important;
+}
+
+.navigationTab.active {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+/* Dialog colors */
+.modalDialog {
+  background-color: var(--secondary-background-color) !important;
+  animation: fadeIn var(--animation-duration-normal) var(--animation-easing-standard) forwards !important;
+}
+
+/* Dialog backdrop */
+.modalBackdrop,
+.overlay {
+  background-color: rgba(0, 0, 0, 0.459) !important;
+  animation: fadeIn var(--animation-duration-normal) var(--animation-easing-standard) forwards !important;
+}
+
+/* ========== TYPOGRAPHY - COLORS ONLY ========== */
+/* Text colors */
+h1, h2, h3, h4, h5, h6,
+.title, .heading, .header {
+  color: var(--text-primary-color) !important;
+}
+
+p, span, div, a {
+  color: var(--text-primary-color) !important;
+}
+
+/* Meta information text - removed hover effect */
+.metaItem {
+  color: var(--text-secondary-color) !important;
+}
+
+/* ========== MENU ITEMS ========== */
+/* Menu items - colors only */
+.menu-container,
+.menu,
+.dropdown,
+.popup,
+.contextMenu,
+[class*="menu"],
+[class*="dropdown"],
+[class*="popup"] {
+  background-color: var(--secondary-background-color) !important;
+  animation: fadeIn var(--animation-duration-normal) var(--animation-easing-standard) forwards !important;
+}
+
+/* Menu items hover */
+.menuItem:hover,
+[class*="menuItem"]:hover,
+[class*="item"]:hover {
+  background-color: var(--quaternary-background-color) !important;
+}
+
+/* Three dots menu on cards - transparent background */
+.menu-label-container,
+.multiselect-menu-container,
+[class*="menu-label"],
+[class*="multiselect-container"],
+.meta-item-container .title-bar-container .menu-label-container,
+.meta-item-container .menu-button-container {
+  background-color: transparent !important;
+}
+
+/* ========== INPUT ELEMENTS ========== */
+/* Search inputs */
+input[type="text"], 
+input[type="search"],
+.searchInput, 
+.searchField {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: var(--text-primary-color) !important;
+}
+
+input[type="text"]:focus, 
+input[type="search"]:focus,
+.searchInput:focus, 
+.searchField:focus {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
